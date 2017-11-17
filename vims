@@ -1,0 +1,19 @@
+vim
+├── autoload
+│   ├── pathogen.vim
+│   └── plug.vim
+├── bundle
+│   ├── ale
+│   ├── nerdcommenter
+│   ├── nerdtree
+│   ├── rust.vim
+│   ├── vim-racer
+│   └── YouCompleteMe
+├── pack
+│   └── git-plugins
+└── plugged
+    ├── ale
+    ├── vim-numbertoggle
+    └── vim-racer
+
+14 directories, 2 files
