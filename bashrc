@@ -23,11 +23,18 @@ alias b="cd .."
 alias gh="cd /home/github/"
 alias commit=git_commit
 alias l="ls -lah"
+alias ll="ls -lh"
 alias low="for i in {1..3}; do ec-probe write 0x58 0x2D;done"
 alias tone='echo "g(i,x,t,o){return((3&x&(i*((3&i>>16?\"BY}6YB6%\":\"Qj}6jQ6%\")[t%8]+51)>>o))<<4);};main(i,n,s){for(i=0;;i++)putchar(g(i,1,n=i>>14,12)+g(i,s=i>>17,n^i>>13,10)+g(i,s/3,n+((i>>11)%3),10)+g(i,s/5,8+n-((i>>10)%3),9));}"|gcc -xc -&&./a.out|aplay'
 alias update=y"aourt -Syyu --aur"
-
+alias serv="python2.7 -m SimpleHTTPServer"
+alias nymble="cd /home/github/nymble/"
+alias findall="nmap -sP '192.168.1.*'"
+alias search="grep -rnw . -e $1"
 
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 export PATH="$PATH:$HOME/.cargo/"
 export PATH="$PATH:$HOME/.cargo/bin/"
+export PATH="$PATH:/usr/bin/ping"
+export PATH="$PATH:/home/amar/.gem/ruby/2.4.0/bin"
+export EDITOR="vim"

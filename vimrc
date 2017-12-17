@@ -52,6 +52,7 @@ let g:ale_completion_enabled = 1
 let g:ale_set_highlights = 1
 
 Plug 'racer-rust/vim-racer'
+Plug 'vivien/vim-linux-coding-style'
 set hidden
 let g:racer_cmd = "/home/amar/.cargo/bin"
 let g:racer_experimental_completer = 1
