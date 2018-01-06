@@ -31,10 +31,14 @@ alias serv="python2.7 -m SimpleHTTPServer"
 alias nymble="cd /home/github/nymble/"
 alias findall="nmap -sP '192.168.1.*'"
 alias search="grep -rnw . -e $1"
+alias serial="socat -d -d pty,raw,echo=0 pty,raw,echo=0"
 
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 export PATH="$PATH:$HOME/.cargo/"
 export PATH="$PATH:$HOME/.cargo/bin/"
 export PATH="$PATH:/usr/bin/ping"
 export PATH="$PATH:/home/amar/.gem/ruby/2.4.0/bin"
+export PATH="$PATH:/home/github/nymble/software/ros2_ws/src/ament/ament_tools/scripts/"
 export EDITOR="vim"
+
+complete -W "$(teamocil --list)" teamocil
