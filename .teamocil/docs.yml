@@ -1,0 +1,8 @@
+windows:
+  - name: nymble docs
+    root: ~/github/docs
+    layout: main-vertical
+    panes:
+      - vim content/
+      - while true; do make html; done
+      - mkdir -p build/html && cd build/html && python2.7 -m SimpleHTTPServer

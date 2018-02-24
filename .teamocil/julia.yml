@@ -1,0 +1,6 @@
+windows:
+  - name: nymble julia
+    root: ~/github/julia_code/
+    layout: main-vertical
+    panes:
+      - . ~/julia_ws/install/setup.bash && cd ~/github/julia_code/ && vim ./src/julia_embedded/src

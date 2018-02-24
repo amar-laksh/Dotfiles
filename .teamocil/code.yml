@@ -1,0 +1,9 @@
+windows:
+  - name: nymble code
+    root: ~/github/julia_code/
+    layout: main-vertical
+    panes:
+      - . ./install/setup.bash && control_node
+      - . ./install/setup.bash && dummy_input instructions.json ingredients.json
+      - . ./install/setup.bash && recipe_node
+      - . ./install/setup.bash && firmware_node
