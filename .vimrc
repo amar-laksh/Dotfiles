@@ -67,7 +67,7 @@ let g:racer_experimental_completer = 1
  let g:clang_library_path='/usr/lib/x86_64-linux-gnu/libclang-4.0.so.1'
  
 nmap  <F2> :w<bar>!rm -fR build/ install/ && ament build --force-cmake-configure <CR>
-nmap  <F3> :w<bar>!rm -fR build/ install/ && ament build --force-cmake-configure --only-package=julia_embedded <CR>
+nmap  <F3> :w<bar>!ament build --force-cmake-configure --only-package=julia_embedded <CR>
 
 map <C-n> :NERDTreeToggle<CR>
 
