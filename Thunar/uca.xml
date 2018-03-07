@@ -22,4 +22,45 @@
 	<startup-notify/>
 	<directories/>
 </action>
+<action>
+	<icon>system-file-manager</icon>
+	<name>Slugify Files</name>
+	<unique-id>1520409087942854-24</unique-id>
+	<command>for file in %N; do mv &quot;$file&quot; &quot;$(echo &quot;$file&quot; | tr -s &apos; &apos; | tr &apos; A-Z&apos; &apos;-a-z&apos; | tr -s &apos;-&apos; | tr -c &apos;[:alnum:][:cntrl:].&apos; &apos;-&apos;)&quot;; done</command>
+	<description></description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>accessories-text-editor</icon>
+	<name>Copy Content to Clipboard</name>
+	<unique-id>1520409125982259-26</unique-id>
+	<command>cat &quot;%F&quot; | xclip -i -selection clipboard</command>
+	<description></description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open as root</name>
+	<unique-id>1520409045508615-22</unique-id>
+	<command>gksudo exo-open %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
 </actions>
