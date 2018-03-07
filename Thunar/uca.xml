@@ -1,0 +1,25 @@
+<?xml encoding="UTF-8" version="1.0"?>
+<actions>
+<action>
+	<icon>vlc</icon>
+	<name>Play with VLC</name>
+	<unique-id>1520407944984040-17</unique-id>
+	<command>vlc %f</command>
+	<description>plays the current directory with vlc</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+	<audio-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1520407794410001-12</unique-id>
+	<command>alacritty --working-directory %f </command>
+	<description>Example for a custom action</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+</actions>
