@@ -30,4 +30,6 @@ DropdownPosition=100
 DropdownHeight=100
 RunCustomCommand=TRUE
 CustomCommand=tmux
+BackgroundDarkness=0.880000
+BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 
