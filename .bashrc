@@ -39,7 +39,7 @@ alias l="ls -lah"
 alias ll="ls -lh"
 alias low="for i in {1..3}; do ec-probe write 0x58 0x2D;done"
 alias tone='echo "g(i,x,t,o){return((3&x&(i*((3&i>>16?\"BY}6YB6%\":\"Qj}6jQ6%\")[t%8]+51)>>o))<<4);};main(i,n,s){for(i=0;;i++)putchar(g(i,1,n=i>>14,12)+g(i,s=i>>17,n^i>>13,10)+g(i,s/3,n+((i>>11)%3),10)+g(i,s/5,8+n-((i>>10)%3),9));}"|gcc -xc -&&./a.out|aplay'
-alias update="sudo apt update && sudo apt dist-upgrade"
+alias update="sudo pacman -Syyu"
 alias serv="python2.7 -m SimpleHTTPServer"
 alias nymble="cd /home/github/nymble/"
 alias findall="nmap -sP '192.168.1.*'"
@@ -56,22 +56,20 @@ export PATH="$PATH:/home/amar/.gem/ruby/2.4.0/bin"
 export PATH="$PATH:/home/github/nymble/software/ros2_ws/src/ament/ament_tools/scripts/"
 export EDITOR="vim"
 export ANDROID_HOME=/home/amar/Android/Sdk/
-complete -W "$(teamocil --list)" teamocil
 #export CROSS_COMPILE=arm-linux-gnueabihf-
+PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+export GEM_HOME=$HOME/.gem
 
-export PATH=/home/amar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/amar/.cargo/:/home/amar/.cargo/bin/:/usr/bin/ping:/home/amar/.gem/ruby/2.4.0/bin:/home/github/nymble/software/ros2_ws/src/ament/ament_tools/scripts/:/home/amar/.cargo/:/home/amar/.cargo/bin/:/usr/bin/ping:/home/amar/.gem/ruby/2.4.0/bin:/home/github/nymble/software/ros2_ws/src/ament/ament_tools/scripts/
+export PATH=/home/amar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/amar/.cargo/:/home/amar/.cargo/bin/:/usr/bin/ping:/$PATH:$(ruby -e 'print Gem.user_dir')/bin/:/home/github/nymble/software/ros2_ws/src/ament/ament_tools/scripts/:/home/amar/.cargo/:/home/amar/.cargo/bin/:/usr/bin/ping:/home/github/nymble/software/ros2_ws/src/ament/ament_tools/scripts/:/home/amar/go/bin/
 #. ~/ros2_ws/install/setup.bash
 export ROS2_CC=gcc
 export ROS2_CXX=g++
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+complete -W "$(teamocil --list)" teamocil
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/amar/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/home/amar/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/amar/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/home/amar/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
 
