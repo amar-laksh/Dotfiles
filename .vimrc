@@ -3,7 +3,7 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
 Plug 'racer-rust/vim-racer'
-"Plug 'vivien/vim-linux-coding-style'
+" Plug 'vivien/vim-linux-coding-style'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
@@ -67,6 +67,18 @@ let g:airline#extensions#tabline#enabled = 1
 
 "####################Config for Auto-format
 au BufWrite * :Autoformat
+
+
+"####################Config for ALE"
+let g:ale_linters = {
+			\   'cpp': ['clang'],
+			\}
+let g:ale_cpp_clang_executable= 'clang'
+let g:ale_cpp_clang_options = '-std=c++14 -Wall -I/home/amar/github/julia_ros_ws/install/include -I/home/amar/github/julia_code/install/include -I/home/amar/github/julia_code/src/julia_embedded/include/'
+let g:ale_completion_enabled = 1
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:airline#extensions#ale#enabled = 1
 
 "####################Config for Rust
 "let g:rustfmt_autosave = 1
