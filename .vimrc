@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'scrooloose/nerdtree'
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 Plug 'racer-rust/vim-racer'
 " Plug 'vivien/vim-linux-coding-style'
 Plug 'scrooloose/nerdcommenter'
@@ -9,6 +9,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'rhlobo/vim-super-retab'
 Plug 'Chiel92/vim-autoformat'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'WolfgangMehner/c-support'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 syntax on
@@ -17,7 +20,7 @@ set exrc
 set secure
 filetype plugin indent on
 set encoding=utf-8
-set list listchars=tab:→\ ,eol:§,nbsp:‡,trail:•,extends:>,precedes:<
+set list listchars=tab:→\ ,nbsp:‡,trail:•,extends:>,precedes:<
 set showbreak=\\ " [bonus]
 set tabstop=4
 set softtabstop=4
@@ -70,15 +73,23 @@ au BufWrite * :Autoformat
 
 
 "####################Config for ALE"
+
+let g:ale_completion_enabled = 1
 let g:ale_linters = {
 			\   'cpp': ['clang'],
 			\}
-let g:ale_cpp_clang_executable= 'clang'
-let g:ale_cpp_clang_options = '-std=c++14 -Wall -I/home/amar/github/julia_ros_ws/install/include -I/home/amar/github/julia_code/install/include -I/home/amar/github/julia_code/src/julia_embedded/include/'
-let g:ale_completion_enabled = 1
+let g:ale_cpp_clang_executable= 'clang++'
+let g:ale_cpp_clang_options = '-std=c++14 -Wall -Wextra -I/home/amar/github/julia_ros_ws/install/include -I/home/amar/github/julia_code/install/include -I/home/amar/github/julia_code/src/julia_embedded/include/'
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 let g:airline#extensions#ale#enabled = 1
+
+
+"####################Config for Ycm
+let g:ycm_global_ycm_extra_conf = '/home/amar/Dotfiles/.ycm_extra_conf.py'
+nmap <leader><space>d :YcmCompleter GoTo<CR>
+g:ycm_autoclose_preview_window_after_completion = 1
+g:ycm_autoclose_preview_window_after_insertion = 1
 
 "####################Config for Rust
 "let g:rustfmt_autosave = 1
