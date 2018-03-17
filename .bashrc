@@ -87,6 +87,7 @@ alias c="clear"
 alias b="cd .."
 alias gh="cd /home/github/"
 alias commit=git_commit
+alias p="git push"
 alias l="ls -lah"
 alias ll="ls -lh"
 alias low="for i in {1..3}; do ec-probe write 0x58 0x2D;done"
