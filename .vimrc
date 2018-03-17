@@ -1,16 +1,16 @@
 call plug#begin('~/.vim/plugged')
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'scrooloose/nerdtree'
-"Plug 'w0rp/ale'
-Plug 'racer-rust/vim-racer'
+" Plug 'w0rp/ale'
+" Plug 'racer-rust/vim-racer'
 " Plug 'vivien/vim-linux-coding-style'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
-Plug 'rhlobo/vim-super-retab'
+" Plug 'rhlobo/vim-super-retab'
 Plug 'Chiel92/vim-autoformat'
 Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'WolfgangMehner/c-support'
+"Plug 'WolfgangMehner/c-support'
 Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
