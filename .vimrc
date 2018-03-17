@@ -88,8 +88,6 @@ let g:airline#extensions#ale#enabled = 1
 "####################Config for Ycm
 let g:ycm_global_ycm_extra_conf = '/home/amar/Dotfiles/.ycm_extra_conf.py'
 nmap <leader><space>d :YcmCompleter GoTo<CR>
-g:ycm_autoclose_preview_window_after_completion = 1
-g:ycm_autoclose_preview_window_after_insertion = 1
 
 "####################Config for Rust
 "let g:rustfmt_autosave = 1
