@@ -15,12 +15,14 @@ Plug 'Shougo/unite.vim'
 Plug 'sirver/UltiSnips'
 Plug 'honza/vim-snippets'
 Plug 'machakann/vim-sandwich'
-
+Plug 'rstacruz/vim-closer'
 
 " Plug 'w0rp/ale'
 " Plug 'racer-rust/vim-racer'
 " Plug 'vivien/vim-linux-coding-style'
 
+"Fun stuff
+Plug 'TheSovietStorm/vim-radio'
 "Eye candy
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
@@ -171,3 +173,9 @@ map <C-g> :e#<CR>
 "##################Config for Powerline
 set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 let g:powerline_pycmd="py3"
+
+
+
+"####################Config for radio
+map <leader>r :let job1 = job_start(['bash','-c','python3 ~/.vim/plugged/vim-radio/vim-radio/vim-radio.py 0'])
+nmap <leader>s :call job_stop(job1)<CR>
