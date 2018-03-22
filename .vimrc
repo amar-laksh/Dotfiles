@@ -1,17 +1,28 @@
 call plug#begin('~/.vim/plugged')
+"UI Plugins
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+
+"Experience Plugins
+Plug 'scrooloose/nerdcommenter'
+Plug 'Chiel92/vim-autoformat'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'Shougo/unite.vim'
+Plug 'sirver/UltiSnips'
+Plug 'honza/vim-snippets'
+Plug 'machakann/vim-sandwich'
+
+
 " Plug 'w0rp/ale'
 " Plug 'racer-rust/vim-racer'
 " Plug 'vivien/vim-linux-coding-style'
-Plug 'scrooloose/nerdcommenter'
-Plug 'vim-airline/vim-airline'
-Plug 'airblade/vim-gitgutter'
-" Plug 'rhlobo/vim-super-retab'
-Plug 'Chiel92/vim-autoformat'
-Plug 'vim-scripts/DoxygenToolkit.vim'
-"Plug 'WolfgangMehner/c-support'
-Plug 'Valloric/YouCompleteMe'
+
+"Eye candy
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 syntax on
@@ -19,7 +30,7 @@ set hidden
 set exrc
 set secure
 filetype plugin indent on
-set encoding=utf-8
+set encoding=UTF-8
 set list listchars=tab:→\ ,nbsp:‡,trail:•,extends:>,precedes:<
 set showbreak=\\ " [bonus]
 set tabstop=4
@@ -27,6 +38,7 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 set background=dark
+set hlsearch
 
 "####################Config for Nerdtree
 "autocmd VimEnter * NERDTree
@@ -69,6 +81,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 
 "####################Config for Auto-format
+autocmd FileType vim,tex,yml let b:autoformat_autoindent=0
 au BufWrite * :Autoformat
 
 
@@ -84,9 +97,9 @@ let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 let g:airline#extensions#ale#enabled = 1
 
-
 "####################Config for Ycm
 let g:ycm_global_ycm_extra_conf = '/home/amar/Dotfiles/.ycm_extra_conf.py'
+let g:ycm_autoclose_preview_window_after_completion = 1
 nmap <leader><space>d :YcmCompleter GoTo<CR>
 
 "####################Config for Rust
@@ -120,6 +133,15 @@ let g:racer_experimental_completer = 1
 set number relativenumber
 
 
+"####################Config for Unite
+nnoremap <C-p> :Unite file_rec/async<cr>
+nnoremap <space>/ :Unite grep:.<cr>
+
+"####################Config for snippets
+let g:UltiSnipsExpandTrigger="<leader><tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 if has("autocmd")
 	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 				\| exe "normal! g'\"" | endif
@@ -144,8 +166,6 @@ map <C-l> :ls<CR>
 map <C-b> :bp<CR>
 map <C-f> :bn<CR>
 map <C-g> :e#<CR>
-
-
 
 
 "##################Config for Powerline
