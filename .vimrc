@@ -16,7 +16,7 @@ Plug 'sirver/UltiSnips'
 Plug 'honza/vim-snippets'
 Plug 'machakann/vim-sandwich'
 Plug 'rstacruz/vim-closer'
-Plug 'NLKNguyen/papercolor-theme'
+
 " Plug 'w0rp/ale'
 " Plug 'racer-rust/vim-racer'
 " Plug 'vivien/vim-linux-coding-style'
@@ -24,6 +24,7 @@ Plug 'NLKNguyen/papercolor-theme'
 "Fun stuff
 Plug 'TheSovietStorm/vim-radio'
 "Eye candy
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
