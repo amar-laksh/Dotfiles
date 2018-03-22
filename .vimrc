@@ -16,7 +16,7 @@ Plug 'sirver/UltiSnips'
 Plug 'honza/vim-snippets'
 Plug 'machakann/vim-sandwich'
 Plug 'rstacruz/vim-closer'
-
+Plug 'NLKNguyen/papercolor-theme'
 " Plug 'w0rp/ale'
 " Plug 'racer-rust/vim-racer'
 " Plug 'vivien/vim-linux-coding-style'
@@ -40,6 +40,7 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 set background=dark
+colorscheme PaperColor
 set hlsearch
 
 "####################Config for Nerdtree
