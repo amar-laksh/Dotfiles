@@ -86,7 +86,7 @@ alias grep='grep --color=auto'
 alias c="clear"
 alias b="cd .."
 alias gh="cd /home/github/"
-alias commit=git_commit
+alias gc=git_commit
 alias p="git push"
 alias l="ls -lah"
 alias ll="ls -lh"
