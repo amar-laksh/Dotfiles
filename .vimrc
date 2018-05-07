@@ -9,17 +9,17 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Chiel92/vim-autoformat'
 Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', {'do' : './install.py -all' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/unite.vim'
 Plug 'sirver/UltiSnips'
 Plug 'honza/vim-snippets'
 Plug 'machakann/vim-sandwich'
 Plug 'rstacruz/vim-closer'
+Plug 'w0rp/ale'
 
-" Plug 'w0rp/ale'
-" Plug 'racer-rust/vim-racer'
 " Plug 'vivien/vim-linux-coding-style'
+"Plug 'racer-rust/vim-racer'
 
 "Fun stuff
 Plug 'TheSovietStorm/vim-radio'
