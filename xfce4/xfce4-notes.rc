@@ -1,6 +1,6 @@
 [Notes]
-PosX=1054
-PosY=131
+PosX=1032
+PosY=177
 Width=300
 Height=380
 TabsOrder=Notes;
@@ -8,4 +8,4 @@ LastTab=0
 Above=false
 Sticky=true
 Transparency=9
-Visible=true
+Visible=false

@@ -141,7 +141,7 @@ export ROS2_CXX=g++
 # export ROS_SECURITY_ROOT_DIRECTORY=~/sros2_demo/demo_keys
 # export ROS_SECURITY_ENABLE=true
 # export ROS_SECURITY_STRATEGY=Enforce
-export CROSS_COMPILE="/home/amar/github/tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin/arm-linux-gnueabihf-"
+#export CROSS_COMPILE="/home/amar/github/tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin/arm-linux-gnueabihf-"
 
 # Qtrpi related
 export QTRPI_QT_VERSION='5.7.0'

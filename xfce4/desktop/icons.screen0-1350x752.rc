@@ -1,19 +1,43 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
-[/home/amar/Desktop/Counter-Strike Global Offensive.desktop]
-row=2
+[/home/amar/Desktop/War Thunder.desktop]
+row=5
 col=0
 
-[78A02407A023CB08]
+[/home/amar/Desktop/Age of Empires II HD.desktop]
+row=6
+col=0
+
+[/home/amar/Desktop/Democracy 3.desktop]
+row=8
+col=0
+
+[/home/amar/Desktop/Company of Heroes - Complete Edition.desktop]
+row=9
+col=0
+
+[/home/amar/Desktop/Company of Heroes.desktop]
+row=7
+col=0
+
+[/home/amar/Desktop/steam.desktop]
 row=3
 col=0
 
-[Rubbish Bin]
+[/home/amar/Desktop/Counter-Strike Global Offensive.desktop]
+row=4
+col=0
+
+[Trash]
+row=0
+col=0
+
+[/]
 row=1
 col=0
 
 [/home/amar]
-row=0
+row=2
 col=0
 
