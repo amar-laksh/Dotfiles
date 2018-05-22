@@ -41,8 +41,9 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 set background=dark
-colorscheme PaperColor
+"colorscheme PaperColor
 set hlsearch
+set cursorline
 
 "####################Config for Nerdtree
 "autocmd VimEnter * NERDTree
