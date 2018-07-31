@@ -1,0 +1,9 @@
+windows:
+  - name: ros_dev
+    root: /home/amar/github/julia_code
+    layout: tiled
+    panes:
+      
+      - . ~/github/ros2_ws/install/setup.bash && . install/setup.bash && ros2 run examples_rclcpp_minimal_subscirber_lambda
+      - . ~/github/ros2_ws/install/setup.bash && . install/setup.bash
+      - . ~/github/ros2_ws/install/setup.bash && . install/setup.bash && qtcreator

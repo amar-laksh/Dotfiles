@@ -17,14 +17,18 @@ Plug 'honza/vim-snippets'
 Plug 'machakann/vim-sandwich'
 Plug 'rstacruz/vim-closer'
 Plug 'w0rp/ale'
+Plug 'Rykka/riv.vim'
 
 " Plug 'vivien/vim-linux-coding-style'
-"Plug 'racer-rust/vim-racer'
+Plug 'racer-rust/vim-racer'
 
 "Fun stuff
 Plug 'TheSovietStorm/vim-radio'
-"Eye candy
+""""""""Eye candy
+"Themes
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'gilgigilgil/anderson.vim'
+"Icons
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
@@ -41,9 +45,11 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 set background=dark
-"colorscheme PaperColor
+colorscheme PaperColor
 set hlsearch
+set spell spelllang=en_gb
 set cursorline
+
 
 "####################Config for Nerdtree
 "autocmd VimEnter * NERDTree
@@ -86,8 +92,9 @@ let g:airline#extensions#tabline#enabled = 1
 
 
 "####################Config for Auto-format
-autocmd FileType vim,tex,yml let b:autoformat_autoindent=0
-au BufWrite * :Autoformat
+autocmd FileType yaml,vim,tex,yml,rst,md,markdown,python let b:autoformat_autoindent=0
+"au BufWrite * :Autoformat
+let g:formatter_yapf_style = 'pep8'
 
 
 "####################Config for ALE"
@@ -103,15 +110,16 @@ let g:ale_sign_warning = '--'
 let g:airline#extensions#ale#enabled = 1
 
 "####################Config for Ycm
-let g:ycm_global_ycm_extra_conf = '/home/amar/Dotfiles/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '/home/amar/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
 nmap <leader><space>d :YcmCompleter GoTo<CR>
 
 "####################Config for Rust
 "let g:rustfmt_autosave = 1
-let g:ycm_rust_src_path = "~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/"
-let g:racer_cmd = "~/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
+let g:ycm_rust_src_path = '~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/'
+"let g:racer_cmd = '~/.cargo/bin/racer'
+"let g:racer_experimental_completer = 1
+
 set mouse=a
 set autoread
 au CursorHold * checktime
@@ -130,9 +138,6 @@ if executable('rls')
 endif
 let g:ale_completion_enabled = 1
 let g:ale_set_highlights = 1
-
-let g:racer_cmd = "/home/amar/.cargo/bin"
-let g:racer_experimental_completer = 1
 
 "####################Config for numbertoggle
 set number relativenumber

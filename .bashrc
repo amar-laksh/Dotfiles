@@ -21,28 +21,28 @@ function parse_git_branch() {
 function parse_git_dirty() {
 	status=$(git status 2>&1 | tee)
 	dirty=$(
-		echo -n "${status}" 2>/dev/null | grep "modified:" &>/dev/null
-		echo "$?"
+	echo -n "${status}" 2>/dev/null | grep "modified:" &>/dev/null
+	echo "$?"
 	)
 	untracked=$(
-		echo -n "${status}" 2>/dev/null | grep "Untracked files" &>/dev/null
-		echo "$?"
+	echo -n "${status}" 2>/dev/null | grep "Untracked files" &>/dev/null
+	echo "$?"
 	)
 	ahead=$(
-		echo -n "${status}" 2>/dev/null | grep "Your branch is ahead of" &>/dev/null
-		echo "$?"
+	echo -n "${status}" 2>/dev/null | grep "Your branch is ahead of" &>/dev/null
+	echo "$?"
 	)
 	newfile=$(
-		echo -n "${status}" 2>/dev/null | grep "new file:" &>/dev/null
-		echo "$?"
+	echo -n "${status}" 2>/dev/null | grep "new file:" &>/dev/null
+	echo "$?"
 	)
 	renamed=$(
-		echo -n "${status}" 2>/dev/null | grep "renamed:" &>/dev/null
-		echo "$?"
+	echo -n "${status}" 2>/dev/null | grep "renamed:" &>/dev/null
+	echo "$?"
 	)
 	deleted=$(
-		echo -n "${status}" 2>/dev/null | grep "deleted:" &>/dev/null
-		echo "$?"
+	echo -n "${status}" 2>/dev/null | grep "deleted:" &>/dev/null
+	echo "$?"
 	)
 	bits=''
 	if [ "${renamed}" == "0" ]; then
@@ -74,6 +74,7 @@ function git_commit() {
 	git add . && git commit -m "$1"
 }
 
+
 man() {
 	env \
 		LESS_TERMCAP_mb="$(printf "\e[1;31m")" \
@@ -84,10 +85,10 @@ man() {
 		LESS_TERMCAP_ue="$(printf "\e[0m")" \
 		LESS_TERMCAP_us="$(printf "\e[1;32m")" \
 		man "${@}"
-}
+	}
 
 # GENERAL ###########################################################################################
-export PS1="\[\e[31m\]\u\[\e[m\]: \[\e[32;40m\]\w\[\e[m\]    \[\e[33;40m\]\`parse_git_branch\`\[\e[m\]\n$ "
+export PS1="\[\e[31m\]\u\[\e[m\]: \[\e[32;40m\]\w\[\e[m\]    \[\e[33;40m\]\`parse_git_branch\`\[\e[m\]: \t \n$"
 export $(dbus-launch)
 [ -e "/etc/DIR_COLORS" ] && DIR_COLORS="/etc/DIR_COLORS"
 [ -e "$HOME/.dircolors" ] && DIR_COLORS="$HOME/.dircolors"
@@ -99,6 +100,8 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias c="clear"
 alias b="cd .."
+alias format="find . -name *.h -o -name *.cpp -o -name *.hpp -o -name *.c| xargs clang-format  -i -style=Mozilla"
+alias alacritty="(alacritty -e tmux &>/dev/null &); sleep 0.2;wmctrl -r '1:bash' -b toggle,fullscreen"
 
 # Github help
 alias gh="cd /home/amar/github/"
@@ -113,7 +116,7 @@ alias tone='echo "g(i,x,t,o){return((3&x&(i*((3&i>>16?\"BY}6YB6%\":\"Qj}6jQ6%\")
 alias update="sudo pacman -Syyu"
 alias serv="python2.7 -m SimpleHTTPServer"
 alias nymble="cd /home/github/nymble/"
-alias findall="nmap -sP '192.168.1.*'"
+alias findall="nmap -sP '192.168.0.*'"
 alias search="grep -rnw . -e $1"
 alias serial="socat -d -d pty,raw,echo=0 pty,raw,echo=0"
 alias reset="sudo ip link set wlo1 down && sudo ip link set wlo1 up"
@@ -129,7 +132,7 @@ export PATH="$PATH:/home/amar/.gem/ruby/2.4.0/bin"
 export PATH="$PATH:/home/github/nymble/software/ros2_ws/src/ament/ament_tools/scripts/"
 export EDITOR="vim"
 export ANDROID_HOME=/home/amar/Android/Sdk/
-#export CROSS_COMPILE=arm-linux-gnueabihf-
+#export CROSS_COMPILE=aarch64-linux-gnu-
 export GEM_HOME=$HOME/.gem
 
 export PATH=/home/amar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/amar/.cargo/:/home/amar/.cargo/bin/:/usr/bin/ping:/$PATH:$(ruby -e 'print Gem.user_dir')/bin/:/home/github/nymble/software/ros2_ws/src/ament/ament_tools/scripts/:/home/amar/.cargo/:/home/amar/.cargo/bin/:/usr/bin/ping:/home/github/nymble/software/ros2_ws/src/ament/ament_tools/scripts/:/home/amar/go/bin/
@@ -142,6 +145,14 @@ export ROS2_CXX=g++
 # export ROS_SECURITY_ENABLE=true
 # export ROS_SECURITY_STRATEGY=Enforce
 #export CROSS_COMPILE="/home/amar/github/tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin/arm-linux-gnueabihf-"
+alias r="rm -Rf build/ install/ && ament build && ./build/$(basename `pwd`)/$(basename `pwd`) && rm -Rf build/ install/"
+alias ros=". /home/amar/github/julia_ros_ws/install/setup.bash"
+alias cm="ament build --symlink-install"
+
+# ros2soc related
+export ROS2_DIR=/home/amar/github/ros2_ws
+export PACKAGE_DIR=/home/amar/github/julia_code
+export ROS_DISTRO="ardent"
 
 # Qtrpi related
 export QTRPI_QT_VERSION='5.7.0'
@@ -149,7 +160,12 @@ export QTRPI_TARGET_DEVICE='linux-rpi3-g++'
 export QTRPI_TARGET_HOST='pi@192.168.1.4'
 export PATH=/opt/qtrpi/bin:$PATH
 
+# Wine Related
+export WINEPREFIX=/home/amar/.wine/
+
 # completes ###########################################################################################
 complete -W "$(teamocil --list)" teamocil
 
 PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+alias play="vblank_mode=0 LD_PRELOAD=/usr/lib/libstdc++.so.6 /usr/lib/libgcc_s.so.1 /usr/lib/libxcb.so.1 primusrun steam"
+export CCACHE_COMPRESS=""

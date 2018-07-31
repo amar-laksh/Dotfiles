@@ -1,6 +1,8 @@
 windows:
-  - name: nymble julia
-    root: ~/github/julia_code/
-    layout: main-vertical
+  - name: ros2
+    root: /home/amar/github/julia_code
+    layout: tiled
     panes:
-      - . ~/julia_ws/install/setup.bash && cd ~/github/julia_code/ && vim ./src/julia_embedded/src
+      - . ~/github/ros2_ws/install/setup.bash && . install/setup.bash && ./build/julia_diagnostic/julia_diagnostic
+      - . ~/github/ros2_ws/install/setup.bash && . install/setup.bash && watch -n1 ros2 topic list
+      - . ~/github/ros2_ws/install/setup.bash && . install/setup.bash && watch -n1 ros2 topic echo /instruction_topic
