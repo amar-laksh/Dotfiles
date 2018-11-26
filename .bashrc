@@ -74,6 +74,9 @@ function git_commit() {
 	git add . && git commit -m "$1"
 }
 
+function record_session() {
+	asciinema rec -c "tmux attach -t "$1""
+}
 
 man() {
 	env \
@@ -100,14 +103,19 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias c="clear"
 alias b="cd .."
-alias format="find . -name *.h -o -name *.cpp -o -name *.hpp -o -name *.c| xargs clang-format  -i -style=Mozilla"
+alias format="find . -name *.h -o -name *.cpp -o -name *.c | xargs clang-format  -i -style=Mozilla"
 alias alacritty="(alacritty -e tmux &>/dev/null &); sleep 0.2;wmctrl -r '1:bash' -b toggle,fullscreen"
 
 # Github help
 alias gh="cd /home/amar/github/"
-alias gc=git_commit
+alias vomit=git_commit
+alias rs=record_session
 alias gd="git diff --stat"
 alias p="git push"
+
+
+alias blog="bundle exec jekyll serve"
+alias ser="screen /dev/ttyUSB0 115200"
 
 alias l="ls -lah"
 alias ll="ls -lh"
@@ -146,13 +154,14 @@ export ROS2_CXX=g++
 # export ROS_SECURITY_STRATEGY=Enforce
 #export CROSS_COMPILE="/home/amar/github/tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin/arm-linux-gnueabihf-"
 alias r="rm -Rf build/ install/ && ament build && ./build/$(basename `pwd`)/$(basename `pwd`) && rm -Rf build/ install/"
-alias ros=". /home/amar/github/julia_ros_ws/install/setup.bash"
-alias cm="ament build --symlink-install"
+alias ros=". ~/ros2_ws/install/setup.bash"
+alias x="colcon build --symlink-install"
+alias jul="teamocil julia"
 
 # ros2soc related
 export ROS2_DIR=/home/amar/github/ros2_ws
 export PACKAGE_DIR=/home/amar/github/julia_code
-export ROS_DISTRO="ardent"
+export ROS_DISTRO="bouncy"
 
 # Qtrpi related
 export QTRPI_QT_VERSION='5.7.0'
